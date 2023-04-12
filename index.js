@@ -42,26 +42,26 @@ function init() {
             type: 'input'
         }
     ]).then((response) => {
-        let shape;
+        const { text, textColor, shape, shapeColor } = response;
 
-        if (response.shape === 'Circle') {
-            shape = new Circle();
-        } else if (response.shape === 'Triangle') {
-            shape = new Triangle();
-        } else if (response.shape === 'Square') {
-            shape = new Square();
+        let newShape;
+
+        if (shape === 'Circle') {
+            newShape = new Circle();
+        } else if (shape === 'Triangle') {
+            newShape = new Triangle();
+        } else if (shape === 'Square') {
+            newShape = new Square();
         }
         
-        shape.setColor(response.shapeColor);
-        shape.setText(response.text);
-        shape.setTextColor(response.textColor);
+        newShape.setColor(shapeColor);
 
         const textForFile = 
 `<svg version="1.1" 
 width="300" height="200" 
 xmlns="http://www.w3.org/2000/svg">
-${shape.render()}
-${shape.renderText()}
+${newShape.render()}
+${newShape.renderText(textColor, text)}
 </svg>`
 
         writeToFile('logo.svg', textForFile);
