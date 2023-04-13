@@ -19,7 +19,7 @@ This application uses the Inquirer package to generate the prompts, and Jest to 
 
 ## Usage
 
-Watch this demo video to see the application in action
+Watch this [demo video](https://drive.google.com/file/d/1eI6BMF7wCKRIdi5tig8tFEEnXV8F38dc/view?usp=sharing) to see the application in action
 
 1. `cd` into the repository in the command line and enter `node index`
 2. Respond to each prompt as it appears in the command line
